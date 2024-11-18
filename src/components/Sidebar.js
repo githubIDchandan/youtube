@@ -1,8 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 export const Sidebar = () => {
+  const menuBtn=useSelector((store)=>store.menu.menuBtn)
   return (
-    <div className='shadow-lg bg-black text-white w-48 h-screen transition-all  '>
+    <div className={'shadow-lg bg-black text-white w-48 h-screen transition-all '+(menuBtn===false?'':'fixed')}>
       <ul className='pt-1'>
         <li className='pt-1'>Home</li>
         <li className='pt-1'>Shorts</li>

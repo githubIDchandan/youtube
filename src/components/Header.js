@@ -1,19 +1,19 @@
 import React from 'react'
 import { Sidebar } from './Sidebar'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addHandleMenu } from '../store/menuSlice';
 
 const Header = () => {
 
 const dispatch=useDispatch();
-
+const menuBtn=useSelector((store)=>store.menu.menuBtn)
 const handleHanClick=()=>{
      dispatch(addHandleMenu());
 }
 
 
   return (
-    <div className=' flex justify-between shadow-lg p-5 h-fit w-full'>
+    <div className={' flex justify-between shadow-lg p-5 h-fit fixed z-10 bg-gray-50'+(menuBtn===true?' ml-[192px] ':' w-full ')}>
       {/* <Sidebar/> */}
       <div className='flex '>
          <img className='h-8 ml-1 cursor-pointer' alt='ham' onClick={handleHanClick} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEn7mEYUDo9rDdJ3Q7FMygT7jUzFxBS8r2wTV_VzsX-Fq620MUayCcdqd91Ju-cLBYYzM&usqp=CAU'></img>

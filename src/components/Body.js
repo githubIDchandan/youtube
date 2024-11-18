@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 export const Body = () => {
  
   const menuBtn=useSelector((store)=>store.menu.menuBtn)
-  console.log(menuBtn)
+  // console.log(menuBtn)
 
   return (
     <div className='flex'>
