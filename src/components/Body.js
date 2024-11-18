@@ -3,6 +3,7 @@ import { Sidebar } from './Sidebar'
 import { MainContainer } from './MainContainer'
 import Header from './Header'
 import { useSelector } from 'react-redux'
+import { Outlet } from 'react-router-dom'
 
 
 export const Body = () => {
@@ -15,7 +16,7 @@ export const Body = () => {
       {menuBtn&& <Sidebar/>}
         <div className="w-full">
           <Header/>
-          <MainContainer/>
+          <Outlet/>
       </div>
        
     </div>

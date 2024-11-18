@@ -2,6 +2,7 @@ import React from 'react'
 import { Sidebar } from './Sidebar'
 import { useDispatch, useSelector } from 'react-redux'
 import { addHandleMenu } from '../store/menuSlice';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -17,7 +18,10 @@ const handleHanClick=()=>{
       {/* <Sidebar/> */}
       <div className='flex '>
          <img className='h-8 ml-1 cursor-pointer' alt='ham' onClick={handleHanClick} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEn7mEYUDo9rDdJ3Q7FMygT7jUzFxBS8r2wTV_VzsX-Fq620MUayCcdqd91Ju-cLBYYzM&usqp=CAU'></img>
-         <img className='h-8 ml-4 cursor-pointer' alt='youtube' src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/YouTube_2024.svg/640px-YouTube_2024.svg.png'></img>
+        <Link to={'/'}>
+        <img className='h-8 ml-4 cursor-pointer' alt='youtube' 
+         src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/YouTube_2024.svg/640px-YouTube_2024.svg.png'></img>
+        </Link>
          <div className='ml-20 w-[1000px] '>
          <input className='w-1/2  p-2 border border-gray-400 rounded-l-full'></input>
          <button className='border border-gray-400  p-2 rounded-r-full'>Search</button>
