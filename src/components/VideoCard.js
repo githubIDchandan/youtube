@@ -21,4 +21,16 @@ const VideoCard = ({video}) => {
   )
 }
 
+
+export const AdVideoCard=({info})=>{
+  // console.log("info",info)
+  return(
+    <div className='m-1 p-1 bg-red-600 text-white rounded-lg border border-red-900'>
+      <p className='font-bold'>Popular</p>
+      <VideoCard video={info}/>
+    </div>
+  )
+}
+
+
 export default VideoCard

@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from 'react'
 import { YOUTUBE_VIDEO_API } from '../utils/constant'
-import VideoCard from './VideoCard';
+import VideoCard, { AdVideoCard } from './VideoCard';
 import { useSelector } from 'react-redux';
 
 const VideoContainer = () => {
 
   const [videos,setVideo]=useState([]);
   const menuBtn=useSelector((store)=>store.menu.menuBtn)
-  console.log(menuBtn)
+  // console.log(menuBtn)
   const getYoutubeVideo=async()=>{
     const data=await fetch(YOUTUBE_VIDEO_API);
     const json=await data.json();
@@ -23,6 +23,8 @@ useEffect(()=>{
 
   return (
     <div className={'flex flex-wrap justify-evenly relative'+(menuBtn===true?' ml-[190px]':"")}>
+     
+       {videos.length>0&&<AdVideoCard info={videos[0]}/>}
       {
         videos.map((item)=>{
           return <VideoCard key={item.id} video={item}/>
