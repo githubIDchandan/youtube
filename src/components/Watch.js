@@ -92,8 +92,8 @@ const Watch = () => {
       }
     ]
   return (
-    <div className={'bg-red-600 relative  my-[85px] h-fit'+(menuBtn===true?' ml-[192px] ':' w-full')}>
-        <div className='flex'>
+    <div className={'bg-red-600 relative  my-[85px] h-fit'+(menuBtn===true?' ml-[192px] ':' w-full ')}>
+        <div className='flex '>
         <iframe 
          className='aspect-video w-[1150px]  h-[690px]'
          src={"https://www.youtube.com/embed/"+search.get('v')+"?si=rFpNHbCg7tkav5iz&autoplay=1"}
@@ -101,8 +101,13 @@ const Watch = () => {
          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
          allowFullScreen>
          </iframe>
-        <div className='w-full border-2 border-black bg-white'>
+        <div >
+        <h1 className='font-bold text-xl fixed z-10 text-blue-600 shadow-2xl ml-1'>Live Chat</h1>
+        </div>
+        <div className='w-full h-[690px] border-2 border-black bg-white flex flex-col-reverse  overflow-y-scroll'>
+        
           <LiveChat/>
+          
         </div>
         </div>
        <div className='flex flex-col text-white bg-red-600 w-full'>
