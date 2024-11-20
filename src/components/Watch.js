@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom';
 import CommentList from './CommentList';
+import LiveChat from './LiveChat';
 
 const Watch = () => {
     const menuBtn=useSelector((store)=>store.menu.menuBtn);
@@ -92,14 +93,18 @@ const Watch = () => {
     ]
   return (
     <div className={'bg-red-600 relative  my-[85px] h-fit'+(menuBtn===true?' ml-[192px] ':' w-full')}>
+        <div className='flex'>
         <iframe 
-         className='aspect-video w-[1400px] h-[690px] mx-auto mt-2'
+         className='aspect-video w-[1150px]  h-[690px]'
          src={"https://www.youtube.com/embed/"+search.get('v')+"?si=rFpNHbCg7tkav5iz&autoplay=1"}
          title="YouTube video player" 
          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
          allowFullScreen>
          </iframe>
-        
+        <div className='w-full border-2 border-black bg-white'>
+          <LiveChat/>
+        </div>
+        </div>
        <div className='flex flex-col text-white bg-red-600 w-full'>
         <h1 className='font-bold text-2xl ml-12 mt-5'>Comments: </h1>
         <CommentList comments={commentData}/>
